@@ -1,0 +1,31 @@
+{
+	"schemaVersion": 1,
+	"id": "emoji",
+	"version": "${version}",
+	"name": "Emoji",
+	"description": "Use emojis in chat by using their name",
+	"authors": [
+		"KGriffon"
+	],
+	"contact": {
+		"homepage": "https://modrinth.com/mod/emoji",
+		"sources": "https://github.com/kgriff0n/emoji"
+	},
+	"license": "MIT",
+	"icon": "assets/emoji/icon.png",
+	"environment": "client",
+	"entrypoints": {
+		"client": [
+          "io.github.kgriff0n.EmojiClient"
+		]
+	},
+	"mixins": [
+		"emoji.mixins.json"
+	],
+	"depends": {
+		"fabricloader": ">=0.16.9",
+		"minecraft": "~1.21.4",
+		"java": ">=21",
+		"fabric-api": "*"
+	}
+}

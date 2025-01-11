@@ -1,0 +1,13 @@
+{
+	"required": true,
+	"package": "io.github.kgriff0n.mixin",
+	"compatibilityLevel": "JAVA_21",
+	"mixins": [
+	],
+	"client": [
+		"ChatHudMixin"
+	],
+	"injectors": {
+		"defaultRequire": 1
+	}
+}
