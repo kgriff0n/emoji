@@ -14,7 +14,7 @@ import java.util.regex.Pattern;
 
 public class TextWithEmoji {
 
-    private static final Pattern EMOJI_PATTERN = Pattern.compile(":[a-zA-Z0-9-_]*:");
+    private static final Pattern EMOJI_PATTERN = Pattern.compile(":[a-zA-Z0-9-_]+:");
 
     private final List<Text> text;
     private final List<Emoji> emojis;

@@ -1,6 +1,7 @@
 package io.github.kgriff0n.mixin;
 
 import com.llamalad7.mixinextras.sugar.Local;
+import io.github.kgriff0n.EmojiClient;
 import io.github.kgriff0n.emoji.TextWithEmoji;
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.font.TextRenderer;
@@ -57,7 +58,11 @@ public abstract class ChatHudMixin {
 		if (icon != null) {
 			i -= icon.width + 4 + 2;
 		}
-		for (Text text : breakRenderedChatMessageLines(message.content(), i, MinecraftClient.getInstance().textRenderer)) {
+		List<Text> breakText = breakRenderedChatMessageLines(message.content(), i, MinecraftClient.getInstance().textRenderer);
+		if (breakText.isEmpty()) {
+			hudMessages.addFirst(new TextWithEmoji(Text.empty()));
+		}
+		for (Text text : breakText) {
 			hudMessages.addFirst(new TextWithEmoji(text));
 		}
 		while (hudMessages.size() > 100) {
